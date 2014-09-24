@@ -1,0 +1,71 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: accv2014finalpaper.aux
+The style file: splncs.bst
+I found no \bibdata command---while reading file accv2014finalpaper.aux
+Warning--I didn't find a database entry for "laptev2005"
+Warning--I didn't find a database entry for "dollar2005"
+Warning--I didn't find a database entry for "wang2011"
+Warning--I didn't find a database entry for "laptev2008"
+Warning--I didn't find a database entry for "blank2005"
+Warning--I didn't find a database entry for "schuldt2004"
+Warning--I didn't find a database entry for "kuehne2011"
+Warning--I didn't find a database entry for "marszalek2009"
+Warning--I didn't find a database entry for "wang2013"
+Warning--I didn't find a database entry for "aggarwal2011"
+Warning--I didn't find a database entry for "perronnin2010"
+Warning--I didn't find a database entry for "jegou2012"
+Warning--I didn't find a database entry for "xwang2013"
+Warning--I didn't find a database entry for "wu2011"
+Warning--I didn't find a database entry for "park2013"
+Warning--I didn't find a database entry for "jain2013"
+Warning--I didn't find a database entry for "ikizler2010"
+Warning--I didn't find a database entry for "oliva2001"
+Warning--I didn't find a database entry for "eightpoint97"
+Warning--I didn't find a database entry for "lowe2004"
+Warning--I didn't find a database entry for "zhang2007"
+Warning--I didn't find a database entry for "niebles2010"
+Warning--I didn't find a database entry for "reddy2013"
+Warning--I didn't find a database entry for "jiang2012"
+You've used 0 entries,
+            2043 wiz_defined-function locations,
+            505 strings with 3907 characters,
+and the built_in function-call counts, 20 in all, are:
+= -- 0
+> -- 0
+< -- 0
++ -- 0
+- -- 0
+* -- 2
+:= -- 9
+add.period$ -- 0
+call.type$ -- 0
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 0
+duplicate$ -- 0
+empty$ -- 1
+format.name$ -- 0
+if$ -- 1
+int.to.chr$ -- 0
+int.to.str$ -- 0
+missing$ -- 0
+newline$ -- 3
+num.names$ -- 0
+pop$ -- 0
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 1
+stack$ -- 0
+substring$ -- 0
+swap$ -- 0
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 0
+width$ -- 0
+write$ -- 2
+(There was 1 error message)
