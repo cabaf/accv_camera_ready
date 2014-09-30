@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.18)  24 SEP 2014 07:38
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.18)  30 SEP 2014 02:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -327,129 +327,91 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 38.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Title too long for running head. Please supply
-a shorter form with \titlerunning prior to \maketitle
-Names of authors too long for running head. Please supply
-a shorter form with \authorrunning prior to \maketitle
-<pull_figure.pdf, id=1, 333.245pt x 165.28452pt>
-File: pull_figure.pdf Graphic file (type pdf)
- <use pull_figure.pdf>
-Package pdftex.def Info: pull_figure.pdf used on input line 54.
-(pdftex.def)             Requested size: 340.17958pt x 168.73676pt.
- [1
+) [1
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+<pull_figure.pdf, id=14, 333.245pt x 165.28452pt>
+File: pull_figure.pdf Graphic file (type pdf)
+ <use pull_figure.pdf>
+Package pdftex.def Info: pull_figure.pdf used on input line 57.
+(pdftex.def)             Requested size: 340.17958pt x 168.73676pt.
 
- [2 <./pull_figure.pdf>] [3] <pipeline.png, id=44, 568.0422pt x 207.174pt>
+[2]
+Underfull \vbox (badness 1168) has occurred while \output is active []
+
+ [3 <./pull_figure.pdf>] <pipeline.png, id=43, 568.0422pt x 207.174pt>
 File: pipeline.png Graphic file (type png)
-
-<use pipeline.png>
-Package pdftex.def Info: pipeline.png used on input line 84.
+ <use pipeline.png>
+Package pdftex.def Info: pipeline.png used on input line 86.
 (pdftex.def)             Requested size: 340.17958pt x 124.06825pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[4] [5 <./pipeline.png>] <cam_motion.png, id=52, 581.0508pt x 310.0383pt>
+File: cam_motion.png Graphic file (type png)
 
- [4]
-Underfull \vbox (badness 1242) has occurred while \output is active []
-
- [5 <./pipeline.png>] [6] <approach.png, id=61, 568.2831pt x 202.1151pt>
+<use cam_motion.png>
+Package pdftex.def Info: cam_motion.png used on input line 105.
+(pdftex.def)             Requested size: 340.17958pt x 181.51596pt.
+ <approach.png, id=53, 568.2831pt x 202.1151pt>
 File: approach.png Graphic file (type png)
 
 <use approach.png>
-Package pdftex.def Info: approach.png used on input line 117.
+Package pdftex.def Info: approach.png used on input line 116.
 (pdftex.def)             Requested size: 340.17958pt x 120.98625pt.
- [7 <./approach.png>]
-<cam_motion.png, id=67, 581.0508pt x 310.0383pt>
-File: cam_motion.png Graphic file (type png)
- <use cam_motion.png>
-Package pdftex.def Info: cam_motion.png used on input line 131.
-(pdftex.def)             Requested size: 340.17958pt x 181.51596pt.
+ [6 <./cam_motion.png>]
+Underfull \vbox (badness 5431) has occurred while \output is active []
 
-<sift.png, id=68, 588.7596pt x 266.1945pt>
+ [7 <./approach.png>] <sift.png, id=68, 588.7596pt x 266.1945pt>
 File: sift.png Graphic file (type png)
  <use sift.png>
-Package pdftex.def Info: sift.png used on input line 140.
+Package pdftex.def Info: sift.png used on input line 148.
 (pdftex.def)             Requested size: 340.17958pt x 153.80396pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--152
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 149--152
-
- []
-
-[8 <./cam_motion.png>] <sampling.png, id=73, 469.5141pt x 176.3388pt>
+<sampling.png, id=69, 469.5141pt x 176.3388pt>
 File: sampling.png Graphic file (type png)
-
-<use sampling.png>
-Package pdftex.def Info: sampling.png used on input line 162.
+ <use sampling.png>
+Package pdftex.def Info: sampling.png used on input line 158.
 (pdftex.def)             Requested size: 340.17958pt x 127.76566pt.
- [9 <./sift.png>] [10 <./sampling.png>]
+ [8 <./sift.png>] [9 <./sampling.png>] [10] [11] [12]
 
-LaTeX Warning: Reference `scene' on page 11 undefined on input line 208.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 206--211
-
- []
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 206--211
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
- []
+[13]
+Underfull \vbox (badness 1127) has occurred while \output is active []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 206--211
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 206--211
-
- []
-
-[11]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [12]
-[13] [14] [15] (./accv2014finalpaper.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+ [14]
+[15] [16] (./accv2014finalpaper.aux) ) 
 Here is how much of TeX's memory you used:
- 2967 strings out of 493304
- 38342 string characters out of 6139871
- 116000 words of memory out of 5000000
- 6376 multiletter control sequences out of 15000+600000
- 11317 words of font info for 43 fonts, out of 8000000 for 9000
+ 2982 strings out of 493304
+ 38530 string characters out of 6139871
+ 114051 words of memory out of 5000000
+ 6388 multiletter control sequences out of 15000+600000
+ 12248 words of font info for 46 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,10n,26p,2752b,321s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on accv2014finalpaper.pdf (15 pages, 11602896 bytes).
+ 38i,10n,26p,1492b,318s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbo
+ls/msam10.pfb>
+Output written on accv2014finalpaper.pdf (16 pages, 11597705 bytes).
 PDF statistics:
- 154 PDF objects out of 1000 (max. 8388607)
- 94 compressed objects within 1 object stream
+ 153 PDF objects out of 1000 (max. 8388607)
+ 93 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

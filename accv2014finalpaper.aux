@@ -4,114 +4,149 @@
 \citation{blank2005,schuldt2004}
 \citation{kuehne2011,marszalek2009}
 \citation{wang2013,wang2011}
-\citation{marszalek2009}
-\@writefile{toc}{\contentsline {title}{Camera Movement and Surrounding Scene Appearance as Contextual Features for Action Recognition}{1}}
-\@writefile{toc}{\contentsline {author}{Fabian Caba Heilbron\textsuperscript  {1,2}, Ali Thabet\textsuperscript  {1}, Juan Carlos Niebles\textsuperscript  {2} and Bernard Ghanem\textsuperscript  {1}}{1}}
+\@writefile{toc}{\contentsline {title}{Camera Motion and Surrounding Scene Appearance as Context for Action Recognition}{1}}
+\@writefile{toc}{\contentsline {author}{Fabian Caba Heilbron\textsuperscript  {1,2}, Ali Thabet\textsuperscript  {1}, Juan Carlos Niebles\textsuperscript  {2}, Bernard Ghanem\textsuperscript  {1}}{1}}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}}
 \newlabel{introduction}{{1}{1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Some human actions have important correlations with surrounding cues. As observed in the first row, there is a video sequence associated with the human action pole vault. It is also noticeable that the camera moves according to some specific patron for capturing the movement of the subject. Specifically, the camera moves within dolly panning tracking when the athlete is approaching the plant and take off. Then, camera slightly starts to tilling up and tilling down when the person is flying away and falling respectively. Additionally, a better description can be performed if visual appearance of the track field is captured.}}{2}}
-\newlabel{fig:pull_figure}{{1}{2}}
+\citation{marszalek2009}
 \citation{aggarwal2011}
 \citation{laptev2005,dollar2005,wang2011}
 \citation{laptev2008,escorcia2013}
 \citation{perronnin2010}
 \citation{jegou2012}
 \citation{xwang2013}
+\newlabel{subsec: related work}{{1}{2}}
+\@writefile{toc}{\contentsline {paragraph}{Action Recognition Pipeline.}{2}}
 \citation{dollar2005,laptev2005}
 \citation{wu2011}
+\citation{GhanemICPR2012}
 \citation{park2013}
 \citation{wang2011}
 \citation{laptev2005}
 \citation{jain2013}
 \citation{wang2013}
-\newlabel{subsec: related work}{{1}{3}}
-\@writefile{toc}{\contentsline {paragraph}{\textbf  {Action Recognition Pipeline.}}{3}}
-\@writefile{toc}{\contentsline {paragraph}{\textbf  {Feature Extraction.}}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Some human actions have important correlations with surrounding cues. As observed in the first row, there is a video sequence associated with the human action pole vault. It is also noticeable that the camera moves according to some specific patron for capturing the movement of the subject. Specifically, the camera moves within dolly panning tracking when the athlete is approaching the plant and take off. Then, camera slightly starts to tilling up and tilling down when the person is flying away and falling respectively. Additionally, a better description can be performed if visual appearance of the track field is captured.}}{3}}
+\newlabel{fig:pull_figure}{{1}{3}}
+\@writefile{toc}{\contentsline {paragraph}{Feature Extraction.}{3}}
 \citation{marszalek2009}
 \citation{ikizler2010}
 \citation{oliva2001}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Proposed Methodology}{4}}
+\newlabel{methodology}{{2}{4}}
 \citation{wang2013}
 \citation{wang2013}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Given a video sequence, a set of dense points trajectories are extracted. Then, a Fundamental Matrix is used for both applying a camera compensation and separating foreground/background trajectories. Each type of trajectories are encoded by different type of descriptors. Specifically, a low level global motion is used to generally describe the camera movement. Moreover, surrounding scene appearance is explicitly computed on background trajectories. Traditional foreground descriptors (\emph  {e.g.} MBH, HOF, HOG and trajectory shape) are also aggregated in actions description. Finally, this set of descriptors are encoded separately using the BoF framework.}}{5}}
-\newlabel{fig:pipeline}{{2}{5}}
-\@writefile{toc}{\contentsline {section}{\numberline {2}Proposed Methodology}{5}}
-\newlabel{methodology}{{2}{5}}
 \citation{eightpoint97}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Given a video sequence, a set of dense point trajectories are extracted. Then, a fundamental matrix is estimated and used to compensate for camera motion and to separate foreground from background trajectories. Each type of trajectories is encoded by a different descriptor. Specifically, frame-to-frame fundamental matrices are used to describe the camera motion. Moreover, surrounding scene appearance is explicitly computed on background trajectories. Traditional foreground descriptors (\emph  {e.g.} MBH, HOF, HOG and trajectory shape) are also aggregated in action description. Finally, this set of descriptors is encoded separately using the BoF framework.}}{5}}
+\newlabel{fig:pipeline}{{2}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Camera Motion}{5}}
+\newlabel{subsec:cam_motion}{{2.1}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces A generic camera motion descriptor can be a useful cue for discriminating specific action classes. The first three rows contain a characteristic correlation between how the camera moves and the action itself. However, this cue is not significant for all action classes, as exemplified in the last two rows, where there is no camera motion.}}{6}}
+\newlabel{fig:camMotion_example}{{3}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Foreground/Background Separation}{6}}
 \citation{marszalek2009}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Camera Movement}{6}}
-\newlabel{subsec:cam_motion}{{2.1}{6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Surrounding Scene Appearance}{6}}
 \citation{wang2013}
 \citation{lowe2004}
 \citation{marszalek2009}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Obtained results from our foreground-background separation and illustration of the encoded information by the surrounding scene features. \textbf  {Top}. Frame sequence sampled from a long jump video. Note that camera is panning to follow the subject. \textbf  {Middle}. Camera compensation allows to perform a background-foreground separation. Noticeably, foreground feature points are mostly related with the subject. \textbf  {Bottom}. Illustration of information captured by our surrounding SIFT. In order to achieve a meaningful illustration, descriptor dimensionality is reduced to 3 dimensions to produce a color-coded image. As illustrated, surrounding appearance is captured only from pixels related with the scenario \emph  {i.e.} avoiding pixels related to the subject that executes the action.}}{7}}
-\newlabel{fig:approach}{{3}{7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Background/Context Appearance}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Results from our foreground-background separation and illustration of the encoded information by the surrounding scene features. (\emph  {top}) Frame sequence sampled from a 'long jump' video. Note that the camera is panning to follow the actor. (\emph  {middle}) Camera compensation allows to perform a background-foreground separation. Noticeably, foreground feature points are mostly related with the actor. (\emph  {bottom}) Illustration of information captured by our surrounding appearance SIFT descriptor. In order to achieve a meaningful illustration, descriptor dimensionality is reduced to 3 dimensions to produce a color-coded image. Surrounding appearance is represented using background points only, thus, avoiding confusion with pixels of the actor him/herself.}}{7}}
+\newlabel{fig:approach}{{4}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Each row presents five different thumbnails taken from different videos of UCF50 dataset. (\emph  {top}) Visual examples of the `rowing' action class. As observed all thumbnails share distinct background appearance \emph  {i.e.} in all water is present and also in the majority there is a common landmark. (\emph  {middle}) Visual examples of the 'billiard' action class. A billiard table and the indoor environment of the action, enable our surrounding appearance descriptor to capture critical information about that action. (\emph  {bottom}) Visual examples of the 'drumming' class. Note that these examples share visual cues that are largely ignored if only foreground features are encoded.}}{8}}
+\newlabel{fig:sift_example}{{5}{8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Background/Context Appearance}{8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Implementation details}{8}}
+\newlabel{subsec:implementation}{{2.4}{8}}
+\@writefile{toc}{\contentsline {paragraph}{Codebook Generation.}{8}}
 \citation{perronnin2010}
 \citation{perronnin2010}
 \citation{perronnin2010}
 \citation{xwang2013}
 \citation{zhang2007}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces A generic camera motion descriptor can be a useful cue for discriminating specific action categories. As illustrated, the first three rows contains a characteristic correlation between how camera moves and the associated action. Unfortunately, this type of cue its not significant for all type of actions as shown in the last two rows where camera does not move at all.}}{8}}
-\newlabel{fig:camMotion_example}{{4}{8}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Implementation details}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Due to the large number of features extracted by the dense trajectory method, sub-sampling is required to generate a codebook. Here, we explore the effect of the number of sampled features on the overall performance. A comparison is done on two different datasets under the Bag-of-Features framework. Also, the performance of two different sampling strategies is reported: uniform and spatial clustering. As noticed, selecting more features to form the codebook and using the spatial clustering approach improve recognition performance in both datasets.}}{9}}
+\newlabel{fig:feature_sampling}{{6}{9}}
+\@writefile{toc}{\contentsline {paragraph}{Representation and Classification.}{9}}
 \citation{xwang2013}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Each row presents five different thumbnails taken from different videos of UCF50 dataset. \textbf  {Top} row corresponds to examples of `rowing'. As observed all thumbnails share distinct background appearance \emph  {i.e.} in all water is present and also in the majority there is a common landmark. In the \textbf  {Middle} row, different billiard examples are depicted. A billiard table and the indoor environment of the action, enable our surrounding appearance descriptor to capture critical information about that action. Finally, \textbf  {Bottom} row shows examples from the drumming category. Note that these examples share visual cues that are largely ignored if only foreground features are used.}}{9}}
-\newlabel{fig:sift_example}{{5}{9}}
-\newlabel{eq:multichannel}{{2}{9}}
 \citation{kuehne2011,marszalek2009,niebles2010,reddy2013}
 \citation{kuehne2011}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Due the extensive amount of features generated in a dense trajectory extraction approach, generally sub-sample is required to generate a codebook. Here, we explore the effect of the number of sampled features in the overall performance. Comparison is effectuated on two different datasets under the Bag of Features framework. Additionally, the effect in performance of two different sampling strategies are studied: uniform and spatial clustering. As noticed, selecting more features to form the codebook and using the spatial clustering sampling benefit recognition performance in both datasets evaluated.}}{10}}
-\newlabel{fig:feature_sampling}{{6}{10}}
+\citation{marszalek2009}
+\newlabel{eq:multichannel}{{2}{10}}
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Comparison of adopted frameworks for action recognition.}}{10}}
 \newlabel{tab:frameworks}{{1}{10}}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Experimental results}{10}}
 \newlabel{results}{{3}{10}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Datasets and evaluation protocol}{10}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Datasets and Evaluation Protocols}{10}}
 \newlabel{subsec:datasets}{{3.1}{10}}
-\citation{marszalek2009}
+\@writefile{toc}{\contentsline {paragraph}{HMDB51}{10}}
 \citation{niebles2010}
 \citation{reddy2013}
+\citation{soomro2012}
+\citation{thumos2013}
 \citation{perronnin2010,wang2013,xwang2013}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Impact of contextual features}{11}}
+\@writefile{toc}{\contentsline {paragraph}{Hollywood2}{11}}
+\@writefile{toc}{\contentsline {paragraph}{Olympic Sports}{11}}
+\@writefile{toc}{\contentsline {paragraph}{UCF50}{11}}
+\@writefile{toc}{\contentsline {paragraph}{UCF101}{11}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Impact of Contextual Features}{11}}
+\@writefile{toc}{\contentsline {paragraph}{Representation.}{11}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Impact of our surrounding scene appearance and camera motion features on recognition performance. Bag-of-Features encoding generally performs worse than Fisher vectors. Both surrounding SIFT and CamMotion show important improvements in performance when they are combined with foreground descriptors.}}{12}}
+\newlabel{tab:features}{{2}{12}}
+\@writefile{toc}{\contentsline {paragraph}{Surrounding Appearance.}{12}}
+\@writefile{toc}{\contentsline {paragraph}{Camera Motion.}{12}}
+\@writefile{toc}{\contentsline {paragraph}{Foreground-Background Separation.}{12}}
 \citation{wang2013,jiang2012,jain2013}
 \citation{wang2013}
 \citation{wang2013}
 \citation{wang2013}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Effect of separating background feature points surrounding SIFT and CamMotion. Experimental results consistently show that SIFT exhibit better results when is capturing the surrounding appearance of actions. Conversely, CamMotion and SIFT tend to be more discriminative when computed in non-foreground feature points.}}{12}}
-\newlabel{tab:segmentation}{{2}{12}}
+\citation{wang2013}
+\citation{wang_thumos}
+\citation{simonyan2014}
 \citation{jiang2012}
 \citation{jain2013}
 \citation{wang2013}
 \citation{wang2013}
+\citation{thumos2013}
+\citation{karaman2013}
+\citation{wang_thumos}
+\citation{hou2014}
+\citation{karpathy2013}
+\citation{simonyan2014}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Effect of separating background feature points on the surrounding SIFT and CamMotion features. These features are extracted using foreground and/or background trajectories. Our results consistently show that our proposed contextual features are most discriminative when they are extracted from background trajectories only.}}{13}}
+\newlabel{tab:segmentation}{{3}{13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Comparison with State-of-the-Art}{13}}
 \bibstyle{splncs}
-\bibcite{laptev2005}{1}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Impact of our surrounding scene appearance and camera movement in recognition performance. Bag of Features generally performs poor than Fisher vectors. Both surrounding SIFT and CamMotion show important improvements in performance when they are combined with foreground descriptors.}}{13}}
-\newlabel{tab:features}{{3}{13}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Comparison with the state of the art}{13}}
-\bibcite{dollar2005}{2}
-\bibcite{wang2011}{3}
-\bibcite{laptev2008}{4}
-\bibcite{blank2005}{5}
-\bibcite{schuldt2004}{6}
-\bibcite{kuehne2011}{7}
-\bibcite{marszalek2009}{8}
-\bibcite{wang2013}{9}
-\bibcite{aggarwal2011}{10}
-\bibcite{perronnin2010}{11}
-\bibcite{jegou2012}{12}
-\bibcite{xwang2013}{13}
-\bibcite{wu2011}{14}
-\bibcite{park2013}{15}
-\bibcite{jain2013}{16}
-\bibcite{ikizler2010}{17}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Comparison with the state-of-the-art on challenging datasets. Our method improves reported results in the state-of-the-art for three different datasets, HMDB51, Olympic Sports and UCF50 and obtains competitive peformance in Hollywod2.}}{14}}
+\bibcite{aggarwal2011}{1}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Comparison with the state-of-the-art on four benchmark datasets. Our method improves reported results in the state-of-the-art for three different datasets, HMDB51, Olympic Sports and UCF50 and obtains comparable performance on Hollywod2. Note that our proposed method does not require explicit human detection.}}{14}}
 \newlabel{tab:stateofart}{{4}{14}}
-\bibcite{oliva2001}{18}
-\bibcite{eightpoint97}{19}
-\bibcite{lowe2004}{20}
-\bibcite{zhang2007}{21}
-\bibcite{escorcia2013}{22}
-\bibcite{niebles2010}{23}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Comparison with the state-of-the-art on UCF 101.}}{14}}
+\newlabel{tab:ucf101}{{5}{14}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Conclusion}{14}}
+\bibcite{GhanemICPR2012}{2}
+\bibcite{blank2005}{3}
+\bibcite{dollar2005}{4}
+\bibcite{escorcia2013}{5}
+\bibcite{eightpoint97}{6}
+\bibcite{hou2014}{7}
+\bibcite{ikizler2010}{8}
+\bibcite{jain2013}{9}
+\bibcite{jegou2012}{10}
+\bibcite{jiang2012}{11}
+\bibcite{karaman2013}{12}
+\bibcite{karpathy2013}{13}
+\bibcite{kuehne2011}{14}
+\bibcite{laptev2005}{15}
+\bibcite{laptev2008}{16}
+\bibcite{thumos2013}{17}
+\bibcite{lowe2004}{18}
+\bibcite{marszalek2009}{19}
+\bibcite{niebles2010}{20}
+\bibcite{oliva2001}{21}
+\bibcite{park2013}{22}
+\bibcite{perronnin2010}{23}
 \bibcite{reddy2013}{24}
-\bibcite{jiang2012}{25}
+\bibcite{schuldt2004}{25}
+\bibcite{simonyan2014}{26}
+\bibcite{soomro2012}{27}
+\bibcite{wang2011}{28}
+\bibcite{wang2013}{29}
+\bibcite{wang_thumos}{30}
+\bibcite{xwang2013}{31}
+\bibcite{wu2011}{32}
+\bibcite{zhang2007}{33}

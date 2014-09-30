@@ -13,10 +13,12 @@ Warning--I didn't find a database entry for "kuehne2011"
 Warning--I didn't find a database entry for "marszalek2009"
 Warning--I didn't find a database entry for "wang2013"
 Warning--I didn't find a database entry for "aggarwal2011"
+Warning--I didn't find a database entry for "escorcia2013"
 Warning--I didn't find a database entry for "perronnin2010"
 Warning--I didn't find a database entry for "jegou2012"
 Warning--I didn't find a database entry for "xwang2013"
 Warning--I didn't find a database entry for "wu2011"
+Warning--I didn't find a database entry for "GhanemICPR2012"
 Warning--I didn't find a database entry for "park2013"
 Warning--I didn't find a database entry for "jain2013"
 Warning--I didn't find a database entry for "ikizler2010"
@@ -26,10 +28,17 @@ Warning--I didn't find a database entry for "lowe2004"
 Warning--I didn't find a database entry for "zhang2007"
 Warning--I didn't find a database entry for "niebles2010"
 Warning--I didn't find a database entry for "reddy2013"
+Warning--I didn't find a database entry for "soomro2012"
+Warning--I didn't find a database entry for "thumos2013"
 Warning--I didn't find a database entry for "jiang2012"
+Warning--I didn't find a database entry for "wang_thumos"
+Warning--I didn't find a database entry for "simonyan2014"
+Warning--I didn't find a database entry for "karaman2013"
+Warning--I didn't find a database entry for "hou2014"
+Warning--I didn't find a database entry for "karpathy2013"
 You've used 0 entries,
             2043 wiz_defined-function locations,
-            505 strings with 3907 characters,
+            515 strings with 4020 characters,
 and the built_in function-call counts, 20 in all, are:
 = -- 0
 > -- 0

@@ -27,7 +27,7 @@
 %===========================================================
 \title{Camera Motion and Surrounding Scene Appearance as Context for Action Recognition} % Replace with your title
 
-\titlerunning{Camera Motion and Surrounding Scene Appearance as Context for Action Recognition} % Replace with your title
+\titlerunning{Camera Motion and Scene Appearance as Context for Action Recognition} % Replace with your title
 
 \authorrunning{Fabian Caba Heilbron, Ali Thabet, Juan Carlos Niebles, Bernard Ghanem} % Replace with your names
 
@@ -216,6 +216,8 @@ We use four public datasets \cite{kuehne2011, marszalek2009, niebles2010, reddy2
 
 \paragraph{UCF50} \cite{reddy2013} includes 6618 videos of 50 different human actions. This dataset presents several recognition challenges due to large variations in camera motion, cluttered background, viewpoint, etc. Action classes are grouped into 25 sets, where each set consists of more than 4 action clips. Recognition performance is measured by applying a leave-one-group-out cross-validation and average accuracy over all group splits is reported.
 
+\paragraph{UCF101} \cite{soomro2012} contains 13320 video clips within 101 different human action categories. This dataset is an extension of UCF50 (described above). We tightly follow the protocol outlined in the THUMOS 2013 action recognition challenge \cite{thumos2013}. 
+
 
 %-----------------------------------------------------------
 \subsection{Impact of Contextual Features}
@@ -263,18 +265,16 @@ Foreground & SIFT & CamMotion & HMDB51 & Hollywood2 & Olympics & UCF50 \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\paragraph{Surrounding Appearance.} While the surrounding SIFT features achieves a discrete performance by itself, it also produces a notable improvement when combined with foreground descriptors. As Table \ref{tab:features} reports, performance is significantly improved over all datasets. Interestingly, we note that this features produces higher improvements in HMDB51 and UCF50 \emph{i.e.} +2.7\% and +2.4\% respectively.
-
+\paragraph{Surrounding Appearance.} While the surrounding SIFT features achieves a discrete performance by itself, it also produces a notable improvement when combined with foreground descriptors. As Table \ref{tab:features} reports, performance is significantly improved over all datasets. Interestingly, we note that this features produces higher improvements in HMDB51 and UCF50.
 
 \paragraph{Camera Motion.} Our experiments provide evidence that action recognition performance can be improved when global camera motion is incorporated with Foreground features. Our CamMotion feature provides slightly lower contributions in performance than the surrounding SIFT feature, in general. We observe a contribution over all datasets except on HMDB51 where recognition performance decreases. This negative effect is attributed to the extensive shared shaky camera motion in most video sequences of this dataset. This prevents CamMotion from capturing discriminative cues across the action classes.
 
-
-\paragraph{Foreground-Background Separation.} As described in Section \ref{methodology}, we perform a weak separation between background and foreground feature trajectories. Here, we measure the effect on performance of this separation. We note that this separation provides a significant boost in performance, as observed in Table \ref{tab:segmentation}. When feature points are localized on the background, surrounding SIFT focuses on the scene appearance avoiding information of actors and foreground objects. Unlike other methods that extract context information from all the trajectories (both background and foreground) in the video, we see that extracting surrounding SIFT and CamMotion features from the background alone improves overall performance. These results motivate our weak separation step as a necessary strategy in the action recognition pipeline. For the surrounding SIFT features, this step improves performance by +0.3\% for HMDB51, +4.2\% for Hollywood2, +5.2\% for Olympics and +3.9\% for UCF50. The same behavior is observed with our CamMotion descriptor, where performance is boosted in all datasets when the Fundamental Matrix is computed using background trajectories.
+\paragraph{Foreground-Background Separation.} As described in Section \ref{methodology}, we perform a weak separation between background and foreground feature trajectories. We note that this separation provides a significant boost in performance, as observed in Table \ref{tab:segmentation}. When feature points are localized on the background, surrounding SIFT focuses on the scene appearance avoiding information of actors and foreground objects. Unlike other methods that extract context information from all the trajectories (both background and foreground) in the video, we see that extracting surrounding SIFT and CamMotion features from the background alone improves overall performance. These results motivate our weak separation step as a necessary strategy in the action recognition pipeline. For the surrounding SIFT features, this step improves performance by +0.3\% for HMDB51, +4.2\% for Hollywood2, +5.2\% for Olympics and +3.9\% for UCF50. The same behavior is observed with our CamMotion descriptor, where performance is boosted in all datasets when the Fundamental Matrix is computed using background trajectories.
 
 
 %%%%%%%%%%%%% Table: Effect of selected points %%%%%%%%%%%%%
 \begin{table*}[ht!]
-\caption{Effect of separating background feature points on the surrounding SIFT and CamMotion features. These features are extracted using foreground and/or background trajectories. Our results consistently show that our proposed contextual features are most discriminative when they are extracted from background trajectories only. This motivates our proposed weak separation step and validates why it should be used in the action recognition pipeline.}
+\caption{Effect of separating background feature points on the surrounding SIFT and CamMotion features. These features are extracted using foreground and/or background trajectories. Our results consistently show that our proposed contextual features are most discriminative when they are extracted from background trajectories only.}
 \begin{center}
 {
 \begin{tabular}{|c|c c|c c c c|}
@@ -305,7 +305,7 @@ CamMotion & \checkmark & \checkmark & 12.9\% & 18.7\% & 21.8\% & 17.2\% \\
 %-----------------------------------------------------------
 \vspace{-6pt}
 \subsection{Comparison with State-of-the-Art}
-Here, we compare our proposed method with recent and popular methods in the literature \cite{wang2013, jiang2012, jain2013}. The results of this comparison are reported in Table \ref{tab:stateofart}. We present results of our own implementation of \cite{wang2013}, which corresponds to our baseline (Foreground). The performance gain over the method in \cite{wang2013}, which reports the best performance in the literature, is as follows: \textbf{+2\%} for HMDB51, \textbf{+1.4\%} for Olympic Sports and \textbf{2.6\%} for UCF50. We also achieve a comparable performance on the Hollywood2 dataset with only 0.2\% less in the mAP score. It is noteworthy to mention that the method in \cite{wang2013} requires a human detection (HD) step to perform recognition. Since human detection is not included in our trajectory extraction stage, a more direct comparison is done with the non-HD version of \cite{wang2013}. In this case, our method outperforms their improved trajectory approach by \textbf{3.3\%} for HMDB51, \textbf{1.1\%} for Hollywood2, \textbf{2.3\%} for Olympic Sports and \textbf{3.3\%} for UCF50.
+Here, we compare our proposed method with recent and popular methods in the literature \cite{wang2013, jiang2012, jain2013}. The results of this comparison are reported in Table \ref{tab:stateofart}. We present results of our own implementation of \cite{wang2013}, which corresponds to our baseline (Foreground). The performance gain over the method in \cite{wang2013}, which reports the best performance in the literature, is as follows: \textbf{+2\%} for HMDB51, \textbf{+1.4\%} for Olympic Sports and \textbf{2.6\%} for UCF50. We also achieve a comparable performance on the Hollywood2 dataset with only 0.2\% less in the mAP score. It is noteworthy to mention that the method in \cite{wang2013} requires a human detection (HD) step to perform recognition. Since human detection is not included in our trajectory extraction stage, a more direct comparison is done with the non-HD version of \cite{wang2013}. In this case, our method outperforms their improved trajectory approach by \textbf{3.3\%} for HMDB51, \textbf{1.1\%} for Hollywood2, \textbf{2.3\%} for Olympic Sports and \textbf{3.3\%} for UCF50. Ultimately, Table \ref{tab:ucf101} reports a performance comparison between different methods of the state-of-the-art on the challenging UCF101 dataset. Our context cues for action recognition shown a competitive performance compared with more computationally demanding approaches as \cite{wang_thumos} and  \cite{simonyan2014}.
 
 %%%%%%%%%%%%%% Table: State-of-the-art %%%%%%%%%%%%%%%%%%%%%%
 \begin{table*}[!h]
@@ -334,6 +334,33 @@ Foreground + SIFT + CamMotion  & \textbf{57.9\%} & \textbf{64.1\%} & \textbf{92.
 \end{table*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%% Table: State-of-the-art %%%%%%%%%%%%%%%%%%%%%%
+\begin{table*}[!h]
+\caption{Comparison with the state-of-the-art on UCF 101.}
+\begin{center}
+{
+\begin{tabular}{ |l|c| }
+\hline
+Approach $\downarrow$ & Performance\\
+\hline
+THUMOS \cite{thumos2013} baseline & 43.9\% \\
+\hline
+Transductive labeling CRFs \cite{karaman2013} & 85.7\% \\
+Improved dense trajectories with spatio-temporal pyramid \cite{wang_thumos} & 85.9\% \\
+DaMN: Discriminative and Mutually Nearest \cite{hou2014} & \textbf{86.9\%} \\
+\hline
+Slow fusion spatio-temporal ConvNet \cite{karpathy2013} & 65.4\% \\
+Two stream ConvNet \cite{simonyan2014} & \textbf{87.6\%} \\
+\hline
+\emph{Context for action recognition: Foreground + SIFT} & \textbf{86.2\%} \\
+\emph{Context for action recognition: Foreground + SIFT + CamMotion} & 85.5 \% \\
+\hline
+\end{tabular}
+}
+\end{center}
+\label{tab:ucf101}
+\end{table*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Conclusion}
 In this paper, we propose a set of novel contextual features that can be incorporated into a trajectory-based action recognition pipeline for improved performance. By separating background from foreground trajectories in a video, these features encode the appearance of the surrounding as well as the global camera motion, which can be shown to be discriminative for a large number of action classes. When combined with foreground trajectories, we show that these features, can improve state-of-the-art recognition performance on popular and challenging action datasets, without resorting to any additional processing stages (e.g. human detection). 
@@ -345,6 +372,12 @@ In this paper, we propose a set of novel contextual features that can be incorpo
 \bibliographystyle{splncs}
 
 \begin{thebibliography}{10}
+
+\bibitem{aggarwal2011}
+Aggarwal, J., Ryoo, M.S.:
+\newblock Human activity analysis: A review.
+\newblock ACM Computing Surveys (CSUR) (2011)
+
 \bibitem{GhanemICPR2012}
 Atmosukarto, I., Ghanem, B., Ahuja, N.:
 \newblock Trajectory-based fisher kernel representation for action recognition
@@ -352,10 +385,10 @@ Atmosukarto, I., Ghanem, B., Ahuja, N.:
 \newblock In: International Conference on Pattern Recognition. (2012)
   3333--3336
 
-\bibitem{laptev2005}
-Laptev, I.:
-\newblock On space-time interest points.
-\newblock IJCV (2005)
+\bibitem{blank2005}
+Blank, M., Gorelick, L., Shechtman, E., Irani, M., Basri, R.:
+\newblock Actions as space-time shapes.
+\newblock In: ICCV. (2005)
 
 \bibitem{dollar2005}
 Dollar, P., Rabaud, V., Cottrell, G., Belongie, S.:
@@ -363,45 +396,106 @@ Dollar, P., Rabaud, V., Cottrell, G., Belongie, S.:
 \newblock In: Visual Surveillance and Performance Evaluation of Tracking and
   Surveillance, 2005. (2005)
 
-\bibitem{wang2011}
-Wang, H., Klaser, A., Schmid, C., Liu, C.L.:
-\newblock Action recognition by dense trajectories.
-\newblock In: CVPR. (2011)
+\bibitem{escorcia2013}
+Escorcia, V., Niebles, J.C.:
+\newblock Spatio-temporal Human-Object Interactions for Action Recognition in Videos
+\newblock In: ICCV.
+\newblock (2013)
 
-\bibitem{laptev2008}
-Laptev, I., Marszalek, M., Schmid, C., Rozenfeld, B.:
-\newblock Learning realistic human actions from movies.
-\newblock In: CVPR. (2008)
+\bibitem{eightpoint97}
+Hartley, R.:
+\newblock In defense of the eight-point algorithm.
+\newblock TPAMI (1997)  580--593
 
-\bibitem{blank2005}
-Blank, M., Gorelick, L., Shechtman, E., Irani, M., Basri, R.:
-\newblock Actions as space-time shapes.
-\newblock In: ICCV. (2005)
+\bibitem{hou2014}
+Hou, R., Zamir, A.R., Sukthankar, R., Shah, M.:
+\newblock DaMN--Discriminative and Mutually Nearest: Exploiting Pairwise Category Proximity for Video Action Recognition
+\newblock In: ECCV.
+\newblock (2014)
 
-\bibitem{schuldt2004}
-Schuldt, C., Laptev, I., Caputo, B.:
-\newblock Recognizing human actions: a local svm approach.
-\newblock In: ICPR. (2004)
+\bibitem{ikizler2010}
+Ikizler-Cinbis, N., Sclaroff, S.:
+\newblock Object, scene and actions: Combining multiple features for human
+  action recognition.
+\newblock In: ECCV.
+\newblock (2010)
+
+\bibitem{jain2013}
+Jain, M., J{\'e}gou, H., Bouthemy, P.:
+\newblock Better exploiting motion for better action recognition.
+\newblock In: CVPR. (2013)
+
+\bibitem{jegou2012}
+J{\'e}gou, H., Perronnin, F., Douze, M., S{\'a}nchez, J., P{\'e}rez, P.,
+  Schmid, C.:
+\newblock Aggregating local image descriptors into compact codes.
+\newblock PAMI (2012)
+
+\bibitem{jiang2012}
+Jiang, Y.G., Dai, Q., Xue, X., Liu, W., Ngo, C.W.:
+\newblock Trajectory-based modeling of human actions with motion reference points.
+\newblock In: ECCV.
+\newblock (2012)
+
+\bibitem{karaman2013}
+Karaman, S., Seidenari, L., Bagdanov, A.D., Del Bimbo, A.:
+\newblock L1-regularized logistic regression stacking and transductive crf smoothing for action recognition in video.
+\newblock In: ICCV Workshop on Action Recognition with a Large Number of Classes.
+\newblock (2013)
+
+\bibitem{karpathy2013}
+Karpathy, A., Toderici, G., Shetty, S., Leung, T., Sukthankar, R., Fei-Fei, L.:
+\newblock Large-scale video classification with convolutional neural networks.
+\newblock In: CVPR.
+\newblock (2013)
 
 \bibitem{kuehne2011}
 Kuehne, H., Jhuang, H., Garrote, E., Poggio, T., Serre, T.:
 \newblock Hmdb: a large video database for human motion recognition.
 \newblock In: ICCV. (2011)
 
+\bibitem{laptev2005}
+Laptev, I.:
+\newblock On space-time interest points.
+\newblock IJCV (2005)
+
+\bibitem{laptev2008}
+Laptev, I., Marszalek, M., Schmid, C., Rozenfeld, B.:
+\newblock Learning realistic human actions from movies.
+\newblock In: CVPR. (2008)
+
+\bibitem{thumos2013}
+Laptev, I., Piccardi, M., Shah, M., Sukthankar, R., Jiang, Y.G., Liu, J., Zamir, A.R.:
+\newblock THUMOS: ICCV'13 workshop on action recognition with a large number of classes.
+\newblock (2013)
+
+\bibitem{lowe2004}
+Lowe, D.G.:
+\newblock Distinctive image features from scale-invariant keypoints.
+\newblock IJCV (2004)
+
 \bibitem{marszalek2009}
 Marszalek, M., Laptev, I., Schmid, C.:
 \newblock Actions in context.
 \newblock In: CVPR. (2009)
 
-\bibitem{wang2013}
-Wang, H., Schmid, C.:
-\newblock Action recognition with improved trajectories.
-\newblock In: ICCV. (2013)
+\bibitem{niebles2010}
+Niebles, J.C., Chen, C.W., Fei-Fei, L.:
+\newblock Modeling temporal structure of decomposable motion segments for
+  activity classification.
+\newblock In: ECCV.
+\newblock (2010)
 
-\bibitem{aggarwal2011}
-Aggarwal, J., Ryoo, M.S.:
-\newblock Human activity analysis: A review.
-\newblock ACM Computing Surveys (CSUR) (2011)
+\bibitem{oliva2001}
+Oliva, A., Torralba, A.:
+\newblock Modeling the shape of the scene: A holistic representation of the
+  spatial envelope.
+\newblock IJCV (2001)
+
+\bibitem{park2013}
+Park, D., Zitnick, C.L., Ramanan, D., Doll{\'a}r, P.:
+\newblock Exploring weak stabilization for motion feature extraction.
+\newblock In: CVPR. (2013)
 
 \bibitem{perronnin2010}
 Perronnin, F., S{\'a}nchez, J., Mensink, T.:
@@ -409,11 +503,44 @@ Perronnin, F., S{\'a}nchez, J., Mensink, T.:
 \newblock In: ECCV.
 \newblock (2010)
 
-\bibitem{jegou2012}
-J{\'e}gou, H., Perronnin, F., Douze, M., S{\'a}nchez, J., P{\'e}rez, P.,
-  Schmid, C.:
-\newblock Aggregating local image descriptors into compact codes.
-\newblock PAMI (2012)
+\bibitem{reddy2013}
+Reddy, K.K., Shah, M.:
+\newblock Recognizing 50 human action categories of web videos.
+\newblock Machine Vision and Applications (2013)
+
+\bibitem{schuldt2004}
+Schuldt, C., Laptev, I., Caputo, B.:
+\newblock Recognizing human actions: a local svm approach.
+\newblock In: ICPR. (2004)
+
+\bibitem{simonyan2014}
+Simoyan, K., Zisserman, A.:
+\newblock Two-stream convolutional networks for action recognition in videos.
+\newblock In: arXiv, 1406.2199v1.
+\newblock (2014)
+
+\bibitem{soomro2012}
+Soomro, K., Zamir, A.R., Shah, M.:
+\newblock UCF101: A dataset of 101 human action classes
+from videos in the wild.
+\newblock In: Technical Report. CRCV-TR-12-01.
+\newblock (2012)
+
+\bibitem{wang2011}
+Wang, H., Klaser, A., Schmid, C., Liu, C.L.:
+\newblock Action recognition by dense trajectories.
+\newblock In: CVPR. (2011)
+
+\bibitem{wang2013}
+Wang, H., Schmid, C.:
+\newblock Action recognition with improved trajectories.
+\newblock In: ICCV. (2013)
+
+\bibitem{wang_thumos}
+Wang, H., Schmid, C.:
+\newblock LEAR-INRIA submission for the THUMOS workshop.
+\newblock In: ICCV Workshop on Action Recognition with a Large Number of Classes.
+\newblock (2013)
 
 \bibitem{xwang2013}
 Wang, X., Wang, L., Qiao, Y.:
@@ -428,69 +555,11 @@ Wu, S., Oreifej, O., Shah, M.:
   decomposition of lagrangian particle trajectories.
 \newblock In: ICCV. (2011)
 
-\bibitem{park2013}
-Park, D., Zitnick, C.L., Ramanan, D., Doll{\'a}r, P.:
-\newblock Exploring weak stabilization for motion feature extraction.
-\newblock In: CVPR. (2013)
-
-\bibitem{jain2013}
-Jain, M., J{\'e}gou, H., Bouthemy, P.:
-\newblock Better exploiting motion for better action recognition.
-\newblock In: CVPR. (2013)
-
-\bibitem{ikizler2010}
-Ikizler-Cinbis, N., Sclaroff, S.:
-\newblock Object, scene and actions: Combining multiple features for human
-  action recognition.
-\newblock In: ECCV.
-\newblock (2010)
-
-\bibitem{oliva2001}
-Oliva, A., Torralba, A.:
-\newblock Modeling the shape of the scene: A holistic representation of the
-  spatial envelope.
-\newblock IJCV (2001)
-
-\bibitem{eightpoint97}
-Hartley, R.:
-\newblock In defense of the eight-point algorithm.
-\newblock TPAMI (1997)  580--593
-
-\bibitem{lowe2004}
-Lowe, D.G.:
-\newblock Distinctive image features from scale-invariant keypoints.
-\newblock IJCV (2004)
-
 \bibitem{zhang2007}
 Zhang, J., Marsza{\l}ek, M., Lazebnik, S., Schmid, C.:
 \newblock Local features and kernels for classification of texture and object
   categories: A comprehensive study.
 \newblock IJCV (2007)
-
-\bibitem{escorcia2013}
-Niebles, J.C., Escorcia, V.:
-\newblock Spatio-temporal Human-Object Interactions for Action Recognition in Videos
-\newblock In: ICCV.
-\newblock (2013)
-
-\bibitem{niebles2010}
-Niebles, J.C., Chen, C.W., Fei-Fei, L.:
-\newblock Modeling temporal structure of decomposable motion segments for
-  activity classification.
-\newblock In: ECCV.
-\newblock (2010)
-
-\bibitem{reddy2013}
-Reddy, K.K., Shah, M.:
-\newblock Recognizing 50 human action categories of web videos.
-\newblock Machine Vision and Applications (2013)
-
-\bibitem{jiang2012}
-Jiang, Y.G., Dai, Q., Xue, X., Liu, W., Ngo, C.W.:
-\newblock Trajectory-based modeling of human actions with motion reference
-  points.
-\newblock In: ECCV.
-\newblock (2012)
 
 \end{thebibliography}
 
